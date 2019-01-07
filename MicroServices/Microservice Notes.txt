@@ -1,0 +1,116 @@
+MICRO SERVICE NOTES
+---------------------------
+Path and End Point URL
+
+http://localhost:8080/cts/s2
+
+@RestController
+@RequestMapping("/cts")
+Class TestRest{
+
+@RequestMapping("/s1",method=RequestMethod.POST)
+public @RespponseBody void f1(){
+
+}
+
+@GetMapping("/s2")
+void f2(){
+
+}
+
+@PostMapping("/s3")
+void f3(){
+
+}
+}
+
+Notes:
+-> Spring Boot added to the spring framework from 4x
+-> from 4.3 version onwards , a new Annotation '@RestController' is added
+
+
+
+Microservices:
+-----------------
+
+- Not a Technology/ programming language
+- Arch style
+
+
+
+Principles of Microservices
+-----------------------------
+
+1. Single MS per single business responsibility 
+2. MS are independently deployable. So MS bundles all the dependencies , including library dependencies, and execution environments such as 
+     Web servers and container, data bases etc
+
+END Points
+-----------------
+There are two types of services listeners 
+
+1.  Http listeners
+	- tomcat, jetty, joss,  web logic etc
+	- http protocols
+	- process rest end points
+
+2. Message Listeners
+	- ActiveMQ, RabbitMQ, Kafka, ..etc
+	- JMS, AMQP, , MQTT, etc
+	- process message end points
+
+---------------------------------------------
+
+There are two types of Communications
+
+1. Synchronous communication 
+2. Asynchronous communications
+
+
+Spring Cloud
+------------------
+
+-> Spring cloud is itself not a cloud.  Its module supports cloud platforms .
+->  To manage cloud applications like AWS, Oracle,  We should create Spring Microservice apps with 16 cloud standard rules
+
+
+- Distrubuted Configuration - Config Server -> Spring Cloud Bus. [1 ]
+- Service Registration and Discovery -> Eruka, Consul, Netflix Zookeeper
+- Distrubuted Messaging: Streams
+- Routing: Netflix Zuul
+- Load Balancing: Netflix Ribbon [3]
+- Service to Service Call: Netflix Feign [2]
+- Security: Security
+- Clusters : Clusters
+- Cloud Support: CONNECTORS , AWS, Cloud Foundary
+- Big data Support: Spring Data Flow
+- Distrubuted Tracing: Sieuth
+- Circute Breakers : Netflix Hysterix
+
+sudo firewall -cmd --zone=public --permanent --add-port=4369/tcp --add-port=25672/tcp --add-port=5671-5672/tcp --add-port=15672/tcp  --add-port=61613-61614/tcp --add-port=1883/tcp --add-port=8883/tcp
+
+docker run -d --hostname my-rabbit --name some-rabbit -e RABBITMQ_DEFAULT_USER=guest -e RABBITMQ_DEFAULT_PASS=guest -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
